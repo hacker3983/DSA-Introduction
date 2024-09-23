@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include "list.h"
 enum sort_orders {
 	SORT_ASCENDING,
 	SORT_DESCENDING
