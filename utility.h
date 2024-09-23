@@ -5,6 +5,9 @@
 #include <stdbool.h>
 #include <string.h>
 #include "list.h"
+#include "singly-linkedlist.h"
+#include "doubly-linkedlist.h"
+
 enum sort_orders {
 	SORT_ASCENDING,
 	SORT_DESCENDING
