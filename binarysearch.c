@@ -6,6 +6,7 @@ ssize_t binary_search(int* arr, int target, size_t n) {
 	ssize_t left = 0, right = n-1;
 	while(left <= right) {
 		int mid = (left + right) / 2;
+		printf("left: %zu, right: %zu\n", left, right);
 		// whenever the target value is greater than the value in the middle of the array then
 		// we set the left index equal to the left half of the array
 		//  whenever the target value is less than the middle of the array then
@@ -13,9 +14,12 @@ ssize_t binary_search(int* arr, int target, size_t n) {
 		//  otherwise we just return mid which is the found index
 		if(target > arr[mid]) {
 			left = mid+1;
+			printf("left: %zu, right: %zu\n", left, right);
 		} else if(target < arr[mid]) {
 			right = mid-1;
+			printf("left: %zu, right: %zu\n", left, right);
 		} else {
+			printf("left: %zu, right: %zu\n", left, right);
 			return mid;
 		}
 	}
