@@ -72,7 +72,7 @@ list_t mergesort_combine(list_t left_subarray, list_t right_subarray) {
 list_t mergesort_merge(list_t** merge_list, size_t *merge_count) {
 	list_t new_mergelist = {0}, old_mergelist = {0};
 	size_t j = 0;
-	for(size_t i=(*merge_count)-1;i>1;i--) {
+	for(size_t i=(*merge_count)-1;i>0;i--) {
 		old_mergelist = new_mergelist;
 		new_mergelist = mergesort_combine(old_mergelist, (*merge_list)[i]);
 		list_destroy(&old_mergelist);
