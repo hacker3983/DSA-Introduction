@@ -2,6 +2,7 @@
 #define _SINGLY_LINKEDLIST_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct singly_linkedlist {
 	int value;

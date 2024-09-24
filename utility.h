@@ -7,6 +7,8 @@
 #include "list.h"
 #include "singly-linkedlist.h"
 #include "doubly-linkedlist.h"
+#include "stack_list.h"
+#include "stack_linkedlist.h"
 
 enum sort_orders {
 	SORT_ASCENDING,
