@@ -36,7 +36,7 @@ int main() {
 	size_t key_count = sizeof(keys)/sizeof(char*),
 	       query_count = sizeof(queries)/sizeof(char*),
 	       removal_count = sizeof(removal_list)/sizeof(char*);
-	hashset_t hashset = hashset_create(25);
+	hashset_t hashset = hashset_create(30);
 	for(size_t i=0;i<key_count;i++) {
 		hashset_add(&hashset, keys[i]);	
 	}
