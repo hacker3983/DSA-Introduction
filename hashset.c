@@ -10,7 +10,7 @@ hashset_t hashset_create(size_t size) {
 size_t hashset_hash(hashset_t hashset, const char* key) {
 	size_t xored_sum = 0;
 	for(size_t i=0;i<strlen(key);i++) {
-		xored_sum += 13 + 7 * (key[i] ^ 2);
+		xored_sum += (2 * key[i])  ^ 2;
 	}
 	return xored_sum % hashset.size;
 }
