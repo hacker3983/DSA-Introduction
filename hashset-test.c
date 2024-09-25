@@ -1,4 +1,5 @@
-#include "hashset.h"
+#include <stdio.h>
+#include "utility.h"
 
 int main() {
 	const char* keys[] = {
