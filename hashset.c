@@ -41,7 +41,7 @@ bool hashset_add(hashset_t* hashset, const char* key) {
 
 bool hashset_remove(hashset_t* hashset, const char* key) {
 	if(!hashset_contains(*hashset, key)) {
-		return false;		
+		return false;
 	}
 	size_t hashcode = hashset_hash(*hashset, key),
 	       removal_index = 0;
@@ -58,9 +58,9 @@ bool hashset_remove(hashset_t* hashset, const char* key) {
 		malloc((bucket->key_count) * sizeof(char*)) :
 		NULL;
 	if(new_keys) {
-		for(size_t i=0;i<bucket->key_count+1;i++) {
+		for(size_t i=0, j=0;i<bucket->key_count+1;i++) {
 			if(i != removal_index) {
-				new_keys[i] = bucket->keys[i];
+				new_keys[j++] = bucket->keys[i];
 			}
 		}
 	}
@@ -76,7 +76,7 @@ bool hashset_contains(hashset_t hashset, const char* key) {
 		return false;
 	}
 	for(size_t i=0;i<buckets[hashcode].key_count;i++) {
-		if(strcmp(buckets[hashcode].keys[i], key) == 0) {
+		if(buckets[hashcode].keys && strcmp(buckets[hashcode].keys[i], key) == 0) {
 			return true;
 		}
 	}
@@ -97,7 +97,7 @@ void print_strings(char** strings, size_t string_count) {
 void hashset_print(hashset_t hashset) {
 	printf("[\n");
 	for(size_t i=0;i<hashset.size;i++) {
-		printf("\t\033[32m%zu\033[0m: ", i);
+		printf("\t\033[32m%zu\033[0m:", i);
 		print_strings(hashset.buckets[i].keys,
 				hashset.buckets[i].key_count);
 		if(i != hashset.size-1) {

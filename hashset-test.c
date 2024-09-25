@@ -10,7 +10,12 @@ int main() {
 		"Ashley", "William",
 		"Parker", "Rob",
 		"Pepper", "Banana",
-		"Pineapple", "Watermelon"
+		"Pineapple", "Watermelon",
+		"Apple", "Mango",
+		"Orange", "Strawberry",
+		"Blueberry", "Peach",
+		"Grapes", "Kiwi",
+		"Watermelon", "Papaya"
 	},
 	*queries[] = {
 		"Michaela", "Peter",
@@ -23,6 +28,7 @@ int main() {
 	},
 	*removal_list[] = {
 		"Alice", "John",
+		"Jens", "Peter",
 		"Watermelon", "Banana",
 		"Pineapple", "Pepper",
 		"Apple",
@@ -30,7 +36,7 @@ int main() {
 	size_t key_count = sizeof(keys)/sizeof(char*),
 	       query_count = sizeof(queries)/sizeof(char*),
 	       removal_count = sizeof(removal_list)/sizeof(char*);
-	hashset_t hashset = hashset_create(10);
+	hashset_t hashset = hashset_create(25);
 	for(size_t i=0;i<key_count;i++) {
 		hashset_add(&hashset, keys[i]);	
 	}
