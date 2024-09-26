@@ -12,6 +12,7 @@
 #include "queue_list.h"
 #include "queue_linkedlist.h"
 #include "hashset.h"
+#include "hashmap.h"
 
 enum sort_orders {
 	SORT_ASCENDING,
